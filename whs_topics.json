@@ -65,9 +65,18 @@
           "title": "Dragonfly program features",
           "text": "Safety Feedback Mechanism: Dragonfly program features: Make reporting easy by ensuring Dragonfly kiosks are working properly and clearly signed. Enable one-click safety suggestions and concerns submission and allow associates to report using any device through digital reporting. Provide real-time visibility so associates can view the status of all their safety suggestions and concerns, track progress, and receive notifications when statuses are updated or closed out. Managers provide direct feedback on actions being taken and use the AUSTIN system to notify managers of safety observations."
         },
-        
         {
           "id": 5,
+          "title": "Structured feedback collection",
+          "text": "Safety Feedback Mechanism: Structured feedback collection: Use multiple feedback channels, including skip-level initiatives for Operations Managers, Gemba Walks to identify safety concerns, and Voice of Associate (VOA) MyVoice for systematic feedback collection. Implement VOA boards, ASC boards, and stand-up audits. The safety team receives all feedback through safety channels, aligns with leadership on priorities to action, and conducts dive-deep analysis on all safety questions to understand results and identify opportunities by area, leader, or shift."
+        },
+        {
+      "id": 7,
+      "title": "Encouraging associates to report safety issues",
+      "text": "Do you feel encouraged to report safety issues? Reporting safety concerns is not just encouraged — it is essential. Your willingness to speak up about potential hazards protects you, your colleagues, and everyone in our workplace. Multiple ways to report: You can raise safety concerns via direct conversations with your Area Manager or Team Lead, by participating in Safety Circles, contributing to Gemba Boards, using scanner message services in real-time, reviewing posters and briefs that list reporting methods at your site, and through Safety Saves/Solvers programs that recognise safety improvements."
+        },
+        {
+          "id": 6,
           "title": "Recognition and engagement",
           "text": "Safety Feedback Mechanism: Recognition and engagement: Reward participation through recognition programs and use gamification to encourage involvement. Issue awards for safety contributions and share success stories and positive safety behaviors through stand-ups and communication boards."
         }
