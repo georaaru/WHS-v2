@@ -6,7 +6,9 @@ from slack_sdk import WebClient
 from slack_sdk.errors import SlackApiError
 SLACK_BOT_TOKEN = os.environ.get("SLACK_BOT_TOKEN")
 CHANNEL_IDS = os.environ.get("SLACK_CHANNEL_IDS", "")  # e.g. "C0123AAA,C0456BBB"
-ANCHOR_DATE = date(2025, 1, 1)  # used for deterministic rotation
+# Week anchor: a Sunday (week runs Sun–Sat)
+ANCHOR_WEEK_START = date(2025, 1, 5)   # pick any Sunday as the start of your rotation
+ANCHOR_DATE = date(2025, 1, 1)         # used for daily rotation within a topic
 def load_topics(path: str | Path = "whs_topics.json") -> dict:
     """Load weekly topics + messages from JSON file in the repo."""
     p = Path(path)
@@ -16,24 +18,25 @@ def load_topics(path: str | Path = "whs_topics.json") -> dict:
         return json.load(f)
 def pick_weekly_topic(topics_json: dict, today: date | None = None) -> dict:
     """
-    Pick the topic for this week.
-    Simple version:
-Use ISO week number (1–53)
-Rotate through topics by week number
+    Pick the topic for this week, assuming:
+Week starts on Sunday
+Week ends on Saturday
+Topics rotate in order, one per week.
     """
     if today is None:
         today = date.today()
     weekly_topics = topics_json.get("weekly_topics", [])
     if not weekly_topics:
         raise ValueError("No weekly_topics defined in whs_topics.json")
-    # ISO week number is stable across years; subtract 1 to make it 0-based
-    week_num = today.isocalendar().week  # 1..53
-    idx = (week_num - 1) % len(weekly_topics)
+    # How many days since the anchor Sunday?
+    days_since_anchor = (today - ANCHOR_WEEK_START).days
+    week_offset = days_since_anchor // 7  # integer division
+    idx = week_offset % len(weekly_topics)
     return weekly_topics[idx]
-def pick_daily_message(topic: dict, today: date | None = None) -> str:
+def pick_daily_message(topic: dict, today: date | None = None) -> dict:
     """
     Within the chosen topic, pick a different message each day
-    using a simple date-based rotation.
+    using a simple date-based rotation. Returns the message dict.
     """
     if today is None:
         today = date.today()
@@ -42,13 +45,31 @@ def pick_daily_message(topic: dict, today: date | None = None) -> str:
         raise ValueError(f"No messages defined for topic {topic.get('code')}")
     days_since_anchor = (today - ANCHOR_DATE).days
     idx = days_since_anchor % len(messages)
-    return messages[idx]["text"]
+    return messages[idx]  # full dict: {id, title, text}
+def build_slack_text(topic: dict, message: dict) -> str:
+    """
+    Build the final Slack message with:
+Weekly topic line
+Bolded title
+Body text
+Emojis for a bit of life
+    """
+    topic_name = topic.get("name", "WHS Theme")
+    title = message.get("title", "Safety Tip")
+    body = message.get("text", "")
+    return (
+        f":helmet_with_white_cross: *This week's topic: {topic_name}*\n\n"
+        f":bulb: *{title}*\n"
+        f"{body}\n\n"
+        f"_Automated WHS reminder – stay Safe to Go. :shield:_"
+    )
 def pick_message_for_today() -> str:
-    """High-level helper: load topics, pick this week's topic, then today's message."""
+    """High-level helper: load topics, pick this week's topic, then today's message and format it."""
     topics_json = load_topics()
     today = date.today()
     topic = pick_weekly_topic(topics_json, today)
-    text = pick_daily_message(topic, today)
+    message = pick_daily_message(topic, today)
+    text = build_slack_text(topic, message)
     return text
 def post_to_slack(text: str) -> None:
     """Send the message to all configured channels."""
