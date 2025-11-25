@@ -69,14 +69,19 @@ def pick_daily_message(topic: dict, today: date | None = None) -> dict:
 def build_slack_text(topic: dict, message: dict) -> str:
     """
     Builds formatted Slack text:
-Weekly topic header
+Weekly topic header (bold)
 Bolded message title
-Clean body
+Body text with topic/title prefixes stripped out
 Closing line
     """
     topic_name = topic.get("name", "WHS Theme")
     title = message.get("title", "Safety Tip")
-    body = message.get("text", "")
+    raw_body = message.get("text", "")
+
+    # Remove duplicated phrasing from the body, if present
+    body = strip_prefix(raw_body, topic_name)
+    body = strip_prefix(body, title)
+
     return (
         f":helmet_with_white_cross: *This week's topic: {topic_name}*\n\n"
         f":bulb: *{title}*\n"
