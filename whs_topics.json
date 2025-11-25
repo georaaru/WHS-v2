@@ -1,0 +1,122 @@
+{
+  "weekly_topics": [
+    {
+      "code": "MSD",
+      "name": "MSD Prevention",
+      "messages": [
+        {
+          "id": 1,
+          "title": "Use your powerzone",
+          "text": "MSD Prevention: Use your powerzone: Keeping items in your powerzone — the area from mid-thigh to mid-chest — helps you stay safe when lifting, lowering, and turning."
+        },
+        {
+          "id": 2,
+          "title": "Use the right PPE for MSD prevention",
+          "text": "MSD Prevention: The right equipment for the job: Using correct personal protective equipment (PPE) :gloves:, like gloves for proper grasping, reduces the risk of musculoskeletal disorders (MSDs) such as sprains and strains."
+        },
+        {
+          "id": 3,
+          "title": "Switch sides to reduce strain",
+          "text": "MSD Prevention: Switch sides: Alternating between your left and right sides helps your body maintain balance and reduces strain."
+        },
+        {
+          "id": 4,
+          "title": "Practise the team lift",
+          "text": "MSD Prevention: Practise the team lift: Test the weight before lifting and use both hands. Ask for help if an item is too heavy or awkward."
+        },
+        {
+          "id": 5,
+          "title": "Stretch it out",
+          "text": "MSD Prevention: Stretch it out: Stretch before and after work to reduce fatigue and improve range of motion."
+        },
+        {
+          "id": 6,
+          "title": "Select the right tool",
+          "text": "MSD Prevention: Select the right tool: Use the correct equipment in the proper way to reduce effort and avoid unnecessary strain."
+        },
+        {
+          "id": 7,
+          "title": "Reduce exposure to MSD risk factors",
+          "text": "MSD Prevention: Reduce exposure to MSD risk factors: Test the weight of items before lifting, keep them close to your body, and take micro-breaks to stretch while working."
+        }
+      ]
+    },
+    {
+      "code": "SFM",
+      "name": "Safety Feedback Mechanism",
+      "messages": [
+        {
+          "id": 1,
+          "title": "Empower associates to participate",
+          "text": "Safety Feedback Mechanism: Empower associates to participate: Create mechanisms for associates to raise safety concerns and suggestions. Make it easy for employees to report unsafe situations and provide feedback. Ensure diverse audiences (associates, operations leaders, and WHS team members) can engage across all business units and geographies."
+        },
+        {
+          "id": 2,
+          "title": "Close the feedback loop",
+          "text": "Safety Feedback Mechanism: Close the feedback loop: Provide feedback to associates on concerns or suggestions they have raised. Track concerns and suggestions to completion. Have follow-up conversations with associates on the status of their safety concerns or suggestions. This demonstrates that you value safety and builds trust with associates."
+        },
+        {
+          "id": 3,
+          "title": "Promote participation in feedback",
+          "text": "Safety Feedback Mechanism: Promote participation: Leaders should actively promote associate participation in safety feedback processes. Use multi-channel awareness and engagement activations (digital, static, and experiential learning experiences). Make safety feedback a regular part of daily safety conversations."
+        },
+        {
+          "id": 4,
+          "title": "Dragonfly program features",
+          "text": "Safety Feedback Mechanism: Dragonfly program features: Make reporting easy by ensuring Dragonfly kiosks are working properly and clearly signed. Enable one-click safety suggestions and concerns submission and allow associates to report using any device through digital reporting. Provide real-time visibility so associates can view the status of all their safety suggestions and concerns, track progress, and receive notifications when statuses are updated or closed out. Managers provide direct feedback on actions being taken and use the AUSTIN system to notify managers of safety observations."
+        },
+        {
+          "id": 5,
+          "title": "Structured feedback collection",
+          "text": "Safety Feedback Mechanism: Structured feedback collection: Use multiple feedback channels, including skip-level initiatives for Operations Managers, Gemba Walks to identify safety concerns, and Voice of Associate (VOA) MyVoice for systematic feedback collection. Implement VOA boards, ASC boards, and stand-up audits. The safety team receives all feedback through safety channels, aligns with leadership on priorities to action, and conducts dive-deep analysis on all safety questions to understand results and identify opportunities by area, leader, or shift."
+        },
+        {
+          "id": 6,
+          "title": "Recognition and engagement",
+          "text": "Safety Feedback Mechanism: Recognition and engagement: Reward participation through recognition programs and use gamification to encourage involvement. Issue awards for safety contributions and share success stories and positive safety behaviors through stand-ups and communication boards."
+        }
+      ]
+    },
+    {
+      "code": "CONV",
+      "name": "Conveyor Safety",
+      "messages": [
+        {
+          "id": 1,
+          "title": "General conduct around conveyors",
+          "text": "Conveyor Safety: General conduct around conveyors: Never climb over or under the conveyor. Do not sit on the conveyor and never rest your hands on it. Never lean on, crawl, or reach under or over the conveyor. No joy riding on the conveyor. Only use designated stairways to go across the conveyor or walk around it — do not take shortcuts."
+        },
+        {
+          "id": 2,
+          "title": "Clothing and personal appearance",
+          "text": "Conveyor Safety: Clothing and personal appearance: Do not wear loose clothing on the shopfloor. Long hair and loose clothing can get entrapped in a conveyor and must be secured. Hair must be tied up at all times when on the operations floor, and ponytails reaching over the shoulders need to be pinned up while working. Beards exceeding 3 inches (7.6 cm) from the face must be tied up or netted. Avoid baggy clothing, jewellery, scarves, or accessories that can get caught in moving equipment. Badge lanyards must have a breakaway clasp so they safely detach if caught."
+        },
+        {
+          "id": 3,
+          "title": "Jam clearing",
+          "text": "Conveyor Safety: Jam clearing: Never attempt to correct conveyor faults on your own. Jam clearing is dangerous and only trained and authorized personnel should perform it. Never climb onto the conveyor in the event of a jam. Use jam poles to reach stuck packages and do not lean over the conveyor to reach packages. Report to your manager when you are unable to clear a blockage with a jam pole."
+        },
+        {
+          "id": 4,
+          "title": "Emergency procedures",
+          "text": "Conveyor Safety: Emergency procedures: Report problems with the conveyor to your supervisor immediately. Look out for the closest emergency shut-off device and remove any obstacles in front of it. Use the pull cord or emergency stop button in case of an emergency."
+        },
+        {
+          "id": 5,
+          "title": "Conveyor PPE",
+          "text": "Conveyor Safety: Personal protective equipment (PPE): Use only suitable and well-fitting PPE, including safety gloves and a high-visibility vest. Close your high-visibility vest and tuck away any strings, scarves, or lanyards. All badge lanyards worn on the operations floor must have a breakaway clasp for safe detachment if caught in moving equipment."
+        },
+        {
+          "id": 6,
+          "title": "Parcel handling on conveyors",
+          "text": "Conveyor Safety: Parcel handling: Slide parcels on conveyors rather than lift them. Keep your fingers clear of obstacles to allow parcels to fall safely into flex carts. Parcels falling from conveyors can cause impact injuries, so be aware of this hazard. Wait for packages to be in front of you before scanning to avoid over-reaching."
+        },
+        {
+          "id": 7,
+          "title": "General awareness around conveyors",
+          "text": "Conveyor Safety: General awareness: Malfunctions and potential hazards can occur quickly and must be reported immediately. Look out for the closest emergency shut-off device and remove any obstacles or clutter in front of it. Never take shortcuts — only use designated stairways to cross or walk around the conveyor."
+        }
+      ]
+    }
+  ]
+}
