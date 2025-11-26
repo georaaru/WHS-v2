@@ -118,7 +118,7 @@ def build_slack_text(topic: dict, message: dict) -> str:
     emoji_set = TOPIC_EMOJIS.get(code, {
         "header": ":helmet_with_white_cross:",
         "title": ":bulb:",
-        "footer": "Safe-to-go. :shield: :white_check_mark:",
+        "footer": "Safe-to-go. :safetogo:",
     })
 
     header_emoji = emoji_set["header"]
