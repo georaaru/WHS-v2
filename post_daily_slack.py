@@ -13,34 +13,38 @@ CHANNEL_IDS = os.environ.get("SLACK_CHANNEL_IDS", "")  # comma-separated string
 #  CONSTANTS
 # ---------------------------------------------------------------
 # Weekly cycle: Sunday → Saturday
-# Week 48 = MSD, 49 = SFM, 50 = Conveyor, then repeats.
-# Choose a Sunday that aligns with the start of your weekly cycle.
-ANCHOR_WEEK_START = date(2024, 12, 1)  # Sunday
-# Daily rotation anchor
+# Custom week numbering starts from this Sunday.
+# With this anchor, the week that contains 26 Nov 2025 is week 48.
+ANCHOR_WEEK_START = date(2024, 12, 29)  # Sunday
+# Daily rotation anchor (used to rotate messages within a topic)
 ANCHOR_DATE = date(2025, 1, 1)
 # ---------------------------------------------------------------
 #  PER-TOPIC EMOJI SETS
 # ---------------------------------------------------------------
-
 TOPIC_EMOJIS = {
     "MSD": {  # MSD Prevention
         "header": ":muscle:",                     # before "This week's topic"
-        "title": ":bulb:",                        # before title
-        "footer": "Safe-to-go :safetogo: ",
+        "title": ":bulb:",                     # before title
+        "footer": "Safe-to-go :safetogo:",
     },
-    "SFM": {  # ty Feedback Mechanism
-        "header": ":speech_balloon:",             # emphasises communication
-        "title": ":busts_in_silhouette:",         # people/feedback
-        "footer": "Safe-To-Go :safetogo:",
+    "SFM": {  # Safety Feedback Mechanism
+        "header": ":speech_balloon:",                    # emphasises communication
+        "title": ":busts_in_silhouette:",                     # people/feedback
+        "footer": "Safe-to-go :safetogo:",
     },
-    "CONV": {  # Conveyor ty
+    "CONV": {  # Conveyor Safety
         "header": ":package:",                    # conveyors & parcels
-        "title": ":warning:",                     # hazard awareness
-        "footer": "Safe-To-Go :safetogo:",
+        "title": ":warning:",                    # hazard awareness
+        "footer": "Safe-to-go :safetogo:",
+    },
+    "COLD": {  # Cold Stress Prevention
+        "header": ":snowflake:",                    # cold
+        "title": ":gloves:",                     # PPE for cold
+        "footer": "Safe-to-go :safetogo:",
     },
 }
 # ---------------------------------------------------------------
-#  PREFIX CLEANER (IMPORTANT)
+#  PREFIX CLEANER
 # ---------------------------------------------------------------
 def strip_prefix(text: str, prefix: str) -> str:
     """
@@ -65,16 +69,23 @@ def load_topics(path: str | Path = "whs_topics.json") -> dict:
     with p.open("r", encoding="utf-8") as f:
         return json.load(f)
 # ---------------------------------------------------------------
-#  SELECT WEEKLY TOPIC
+#  SELECT WEEKLY TOPIC (SUNDAY–SATURDAY)
 # ---------------------------------------------------------------
 def pick_weekly_topic(topics_json: dict, today: date | None = None) -> dict:
     """
     Week starts Sunday, ends Saturday.
-    Weekly topic rotates:
-       week 48 → topic 0
-       week 49 → topic 1
-       week 50 → topic 2
-       (repeat)
+    Weekly topic rotates based on a custom week number derived from
+    ANCHOR_WEEK_START.
+    custom_week_number = weeks since anchor (0-based) + 1
+    topic index = custom_week_number % len(weekly_topics)
+    With ANCHOR_WEEK_START = 2024-12-29 and 4 topics ordered as:
+      0: MSD, 1: SFM, 2: CONV, 3: COLD
+    You get:
+      week 48 -> MSD
+      week 49 -> SFM
+      week 50 -> CONV
+      week 51 -> COLD
+      ... then repeats every 4 weeks.
     """
     if today is None:
         today = date.today()
@@ -109,22 +120,18 @@ def build_slack_text(topic: dict, message: dict) -> str:
     title = message.get("title", "Safety Tip")
     raw_body = message.get("text", "")
     code = topic.get("code", "").upper()
-
     # Remove repeated topic/title from body
     body = strip_prefix(raw_body, topic_name)
     body = strip_prefix(body, title)
-
     # Pick emoji set for this topic (fallback if missing)
     emoji_set = TOPIC_EMOJIS.get(code, {
         "header": ":helmet_with_white_cross:",
         "title": ":bulb:",
-        "footer": "Safe-To-Go :safetogo:",
+        "footer": "Safe-to-go :safetogo:",
     })
-
     header_emoji = emoji_set["header"]
     title_emoji = emoji_set["title"]
     footer_text = emoji_set["footer"]
-
     return (
         f"{header_emoji} *This week's topic: {topic_name}*\n\n"
         f"{title_emoji} *{title}*\n"
