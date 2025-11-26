@@ -25,22 +25,22 @@ TOPIC_EMOJIS = {
     "MSD": {  # MSD Prevention
         "header": ":muscle:",                     # before "This week's topic"
         "title": ":bulb:",                     # before title
-        "footer": "Safe-to-go :safetogo:",
+        "footer": "Safe-To-Go :safetogo:",
     },
     "SFM": {  # Safety Feedback Mechanism
         "header": ":speech_balloon:",                    # emphasises communication
         "title": ":busts_in_silhouette:",                     # people/feedback
-        "footer": "Safe-to-go :safetogo:",
+        "footer": "Safe-To-Go :safetogo:",
     },
     "CONV": {  # Conveyor Safety
         "header": ":package:",                    # conveyors & parcels
         "title": ":warning:",                    # hazard awareness
-        "footer": "Safe-to-go :safetogo:",
+        "footer": "Safe-To-Go :safetogo:",
     },
     "COLD": {  # Cold Stress Prevention
         "header": ":snowflake:",                    # cold
         "title": ":gloves:",                     # PPE for cold
-        "footer": "Safe-to-go :safetogo:",
+        "footer": "Safe-To-Go :safetogo:",
     },
 }
 # ---------------------------------------------------------------
@@ -127,7 +127,7 @@ def build_slack_text(topic: dict, message: dict) -> str:
     emoji_set = TOPIC_EMOJIS.get(code, {
         "header": ":helmet_with_white_cross:",
         "title": ":bulb:",
-        "footer": "Safe-to-go :safetogo:",
+        "footer": "Safe-To-Go :safetogo:",
     })
     header_emoji = emoji_set["header"]
     title_emoji = emoji_set["title"]
