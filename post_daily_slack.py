@@ -26,17 +26,17 @@ TOPIC_EMOJIS = {
     "MSD": {  # MSD Prevention
         "header": ":muscle:",                     # before "This week's topic"
         "title": ":bulb:",                        # before title
-        "footer": "Safe-to-go. :shield: :white_check_mark:",
+        "footer": "Safe-to-go. :safetogo: ",
     },
     "SFM": {  # Safety Feedback Mechanism
         "header": ":speech_balloon:",             # emphasises communication
         "title": ":busts_in_silhouette:",         # people/feedback
-        "footer": "Safe-to-go. :shield: :white_check_mark:",
+        "footer": "Safe-to-go. :safetogo:",
     },
     "CONV": {  # Conveyor Safety
         "header": ":package:",                    # conveyors & parcels
         "title": ":warning:",                     # hazard awareness
-        "footer": "Safe-to-go. :shield: :white_check_mark:",
+        "footer": "Safe-to-go. :safetogo:",
     },
 }
 # ---------------------------------------------------------------
