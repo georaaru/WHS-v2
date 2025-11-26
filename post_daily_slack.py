@@ -19,6 +19,27 @@ ANCHOR_WEEK_START = date(2024, 12, 1)  # Sunday
 # Daily rotation anchor
 ANCHOR_DATE = date(2025, 1, 1)
 # ---------------------------------------------------------------
+#  PER-TOPIC EMOJI SETS
+# ---------------------------------------------------------------
+
+TOPIC_EMOJIS = {
+    "MSD": {  # MSD Prevention
+        "header": ":muscle:",                     # before "This week's topic"
+        "title": ":bulb:",                        # before title
+        "footer": "Safe-to-go. :shield: :white_check_mark:",
+    },
+    "SFM": {  # Safety Feedback Mechanism
+        "header": ":speech_balloon:",             # emphasises communication
+        "title": ":busts_in_silhouette:",         # people/feedback
+        "footer": "Safe-to-go. :shield: :white_check_mark:",
+    },
+    "CONV": {  # Conveyor Safety
+        "header": ":package:",                    # conveyors & parcels
+        "title": ":warning:",                     # hazard awareness
+        "footer": "Safe-to-go. :shield: :white_check_mark:",
+    },
+}
+# ---------------------------------------------------------------
 #  PREFIX CLEANER (IMPORTANT)
 # ---------------------------------------------------------------
 def strip_prefix(text: str, prefix: str) -> str:
@@ -87,14 +108,28 @@ def build_slack_text(topic: dict, message: dict) -> str:
     topic_name = topic.get("name", "WHS Theme")
     title = message.get("title", "Safety Tip")
     raw_body = message.get("text", "")
-    # Remove topic/title repetition from body
+    code = topic.get("code", "").upper()
+
+    # Remove repeated topic/title from body
     body = strip_prefix(raw_body, topic_name)
     body = strip_prefix(body, title)
+
+    # Pick emoji set for this topic (fallback if missing)
+    emoji_set = TOPIC_EMOJIS.get(code, {
+        "header": ":helmet_with_white_cross:",
+        "title": ":bulb:",
+        "footer": "Safe-to-go. :shield: :white_check_mark:",
+    })
+
+    header_emoji = emoji_set["header"]
+    title_emoji = emoji_set["title"]
+    footer_text = emoji_set["footer"]
+
     return (
-        f":helmet_with_white_cross: *This week's topic: {topic_name}*\n\n"
-        f":bulb: *{title}*\n"
+        f"{header_emoji} *This week's topic: {topic_name}*\n\n"
+        f"{title_emoji} *{title}*\n"
         f"{body}\n\n"
-        f"Automated WHS Reminder safe-to-go."
+        f"{footer_text}"
     )
 # ---------------------------------------------------------------
 #  MAIN MESSAGE PICKER
