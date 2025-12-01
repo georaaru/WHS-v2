@@ -48,37 +48,37 @@
         {
           "id": 1,
           "title": "Empower associates to participate",
-          "text": "Safety Feedback Mechanism: Empower associates to participate: Create mechanisms for associates to raise safety concerns and suggestions. Make it easy for employees to report unsafe situations and provide feedback. Ensure diverse audiences (associates, operations leaders, and WHS team members) can engage across all business units and geographies."
+          "text": "Safety Feedback Mechanism: Empower associates to participate: Create mechanisms for associates to raise safety concerns and suggestions. Make it easy for employees to report unsafe situations and provide feedback. Ensure diverse audiences across all business units can engage."
         },
         {
           "id": 2,
           "title": "Close the feedback loop",
-          "text": "Safety Feedback Mechanism: Close the feedback loop: Provide feedback to associates on concerns or suggestions they have raised. Track concerns and suggestions to completion. Have follow-up conversations with associates on the status of their safety concerns or suggestions. This demonstrates that you value safety and builds trust with associates."
+          "text": "Safety Feedback Mechanism: Close the feedback loop: Provide feedback to associates on concerns raised. Track concerns to completion. Have follow-up conversations to show that safety feedback is valued and builds trust."
         },
         {
           "id": 3,
           "title": "Promote participation in feedback",
-          "text": "Safety Feedback Mechanism: Promote participation: Leaders should actively promote associate participation in safety feedback processes. Use multi-channel awareness and engagement activations (digital, static, and experiential learning experiences). Make safety feedback a regular part of daily safety conversations."
+          "text": "Safety Feedback Mechanism: Promote participation: Leaders should actively promote safety feedback. Use digital, static, and experiential awareness. Make safety conversations part of daily routine."
         },
         {
           "id": 4,
           "title": "Dragonfly program features",
-          "text": "Safety Feedback Mechanism: Dragonfly program features: Make reporting easy by ensuring Dragonfly kiosks are working properly and clearly signed. Enable one-click safety suggestions and concerns submission and allow associates to report using any device through digital reporting. Provide real-time visibility so associates can view the status of all their safety suggestions and concerns, track progress, and receive notifications when statuses have been updated or closed out. Managers provide direct feedback on actions being taken and use the AUSTIN system to notify managers of safety observations."
+          "text": "Safety Feedback Mechanism: Dragonfly program features: Ensure Dragonfly kiosks are functioning, clearly signed, and easy to use. Allow reporting from any device. Provide real-time visibility, updates, and manager feedback through AUSTIN."
         },
         {
           "id": 5,
           "title": "Structured feedback collection",
-          "text": "Safety Feedback Mechanism: Structured feedback collection: Use multiple feedback channels, including skip-level initiatives for Operations Managers, Gemba Walks to identify safety concerns, and Voice of Associate (VOA) MyVoice for systematic feedback collection. Implement VOA boards, ASC boards, and stand-up audits. The safety team receives all feedback through safety channels, aligns with leadership on priorities to action, and conducts dive-deep analysis on all safety questions to understand results and identify opportunities by area, leader, or shift."
+          "text": "Safety Feedback Mechanism: Structured feedback collection: Use skip-levels, Gemba Walks, and VOA MyVoice. Use boards and audits. Safety teams track, prioritize, and deep-dive all feedback for improvement opportunities."
         },
         {
           "id": 6,
           "title": "Recognition and engagement",
-          "text": "Safety Feedback Mechanism: Recognition and engagement: Reward participation through recognition programs and use gamification to encourage involvement. Issue awards for safety contributions and share success stories and positive safety behaviors through stand-ups and communication boards."
+          "text": "Safety Feedback Mechanism: Recognition and engagement: Reward participation, use gamification, issue awards, and share positive safety stories."
         },
         {
           "id": 7,
           "title": "Encouraging associates to report safety issues",
-          "text": "Do you feel encouraged to report safety issues? Reporting safety concerns is not just encouraged — it is essential. Your willingness to speak up about potential hazards protects you, your colleagues, and everyone in our workplace. Multiple ways to report: You can raise safety concerns via direct conversations with your Area Manager or Team Lead, by participating in Safety Circles, contributing to Gemba Boards, using scanner message services in real-time, reviewing posters and briefs that list reporting methods at your site, and through Safety Saves/Solvers programs that recognise safety improvements."
+          "text": "Reporting safety concerns is essential. Associates can report via managers, Safety Circles, Gemba Boards, scanner messaging, posters, briefs, and Safety Saves/Solvers programs."
         }
       ]
     },
@@ -88,38 +88,38 @@
       "messages": [
         {
           "id": 1,
-          "title": "General conduct around conveyors",
-          "text": "Conveyor Safety: General conduct around conveyors: Never climb over or under the conveyor. Do not sit on the conveyor and never rest your hands on it. Never lean on, crawl, or reach under or over the conveyor. No joy riding on the conveyor. Only use designated stairways to go across the conveyor or walk around it — do not take shortcuts."
+          "title": "General conveyor behaviour",
+          "text": "Never climb over or under the conveyor. Do not sit on the conveyor or rest hands on it. Never reach underneath, crawl, or lean over conveyor systems — including no 'joy riding.' Only use designated stairways to cross the conveyor. Never lean over the conveyor to reach packages."
         },
         {
           "id": 2,
-          "title": "Clothing and personal appearance",
-          "text": "Conveyor Safety: Clothing and personal appearance: Do not wear loose clothing on the shopfloor. Long hair and loose clothing can get entrapped in a conveyor and must be secured. Hair must be tied up at all times when on the operations floor, and ponytails reaching over the shoulders need to be pinned up while working. Beards exceeding 3 inches (7.6 cm) from the face must be tied up or netted. Avoid baggy clothing, jewellery, scarves, or accessories that can get caught in moving equipment. Badge lanyards must have a breakaway clasp so they safely detach if caught."
+          "title": "Clothing and personal items",
+          "text": "Do not wear loose clothing. Long hair and loose clothing must be secured. Hair must be tied up; ponytails over shoulders pinned up. Beards over 3 inches must be tied or netted. Avoid jewellery or accessories that may get caught. Badge lanyards must have a breakaway clasp."
         },
         {
           "id": 3,
           "title": "Jam clearing",
-          "text": "Conveyor Safety: Jam clearing: Never attempt to correct conveyor faults on your own. Jam clearing is dangerous and only trained and authorized personnel should perform it. Never climb onto the conveyor in the event of a jam. Use jam poles to reach stuck packages and do not lean over the conveyor to reach packages. Report to your manager when you are unable to clear a blockage with a jam pole."
+          "text": "Never attempt to correct faults unless trained and authorized. Jam clearing is dangerous. Never climb onto the conveyor. Use jam poles — do not lean over. Report if a jam cannot be cleared safely."
         },
         {
           "id": 4,
-          "title": "Emergency procedures",
-          "text": "Conveyor Safety: Emergency procedures: Report problems with the conveyor to your supervisor immediately. Look out for the closest emergency shut-off device and remove any obstacles in front of it. Use the pull cord or emergency stop button in case of an emergency."
+          "title": "Reporting issues",
+          "text": "Report problems with conveyors immediately. Hazards must be reported right away. Identify the nearest emergency shutoff switch and ensure it is accessible."
         },
         {
           "id": 5,
-          "title": "Conveyor PPE",
-          "text": "Conveyor Safety: Personal protective equipment (PPE): Use only suitable and well-fitting PPE, including safety gloves and a high-visibility vest. Close your high-visibility vest and tuck away any strings, scarves, or lanyards. All badge lanyards worn on the operations floor must have a breakaway clasp for safe detachment if caught in moving equipment."
+          "title": "Emergency preparedness",
+          "text": "Locate the closest emergency shutoff device. Keep it free of obstacles. Know how to use emergency pull cords and stop buttons."
         },
         {
           "id": 6,
-          "title": "Parcel handling on conveyors",
-          "text": "Conveyor Safety: Parcel handling: Slide parcels on conveyors rather than lift them. Keep your fingers clear of obstacles to allow parcels to fall safely into flex carts. Parcels falling from conveyors can cause impact injuries, so be aware of this hazard. Wait for packages to be in front of you before scanning to avoid over-reaching."
+          "title": "Conveyor PPE",
+          "text": "Use suitable PPE, including safety gloves and vests. Close your high-vis vest, remove scarves and loose items. Wear gloves during parcel handling and jam clearing. Never climb, sit, walk, or ride on conveyors."
         },
         {
           "id": 7,
-          "title": "General awareness around conveyors",
-          "text": "Conveyor Safety: General awareness: Malfunctions and potential hazards can occur quickly and must be reported immediately. Look out for the closest emergency shut-off device and remove any obstacles or clutter in front of it. Never take shortcuts — only use designated stairways to cross or walk around the conveyor."
+          "title": "Operating procedures",
+          "text": "Maintain communication with coworkers. Keep work areas clean. Stay alert and focused. Report unusual noises or operation issues."
         }
       ]
     },
@@ -129,28 +129,79 @@
       "messages": [
         {
           "id": 1,
-          "title": "Layer up effectively",
-          "text": "Cold Stress Prevention: Layer up effectively: Wear moisture-wicking base layers, warm mid-layers, and a windproof outer layer to prevent heat loss in cold environments."
+          "title": "Tips to prevent cold temperature illness",
+          "text": "Bring extra clothing like socks. Eat nutritious food. Cover hands, feet and head. Take breaks in warm, dry areas. Wear proper layers and footwear."
         },
         {
           "id": 2,
-          "title": "Stay dry",
-          "text": "Cold Stress Prevention: Stay dry: Wet clothing increases heat loss dramatically. Change out of wet or damp gear as soon as possible to prevent cold stress."
+          "title": "Driving in Winter",
+          "text": "Turn on lights, adapt speed, increase stopping distance. Clear windows and mirrors. Use AC to dry the air. Slow down in wet or icy conditions."
         },
         {
           "id": 3,
-          "title": "Use warm-up breaks",
-          "text": "Cold Stress Prevention: Use warm-up breaks: Take scheduled warm-up breaks in designated warm areas to restore core body temperature and reduce the risk of hypothermia."
+          "title": "Preventing slips, trips and falls",
+          "text": "Keep head over shoulders, shoulders over hips. Move slowly. Wear traction shoes. Take care entering/exiting vehicles. Extend arms for balance."
         },
         {
           "id": 4,
-          "title": "Know the symptoms",
-          "text": "Cold Stress Prevention: Know the symptoms: Shivering, numbness, fatigue, confusion, or slurred speech can be signs of cold stress. If you notice these in yourself or a colleague, report immediately and seek warmth."
+          "title": "Stay visible during dark hours",
+          "text": "Use a flashlight. Wear high-vis clothing. Wear reflective gear during dark hours."
         },
         {
           "id": 5,
-          "title": "Protect extremities",
-          "text": "Cold Stress Prevention: Protect extremities: Wear insulated gloves, warm socks, and appropriate footwear to protect hands and feet, as they are the first areas to be affected by cold stress."
+          "title": "Be prepared for colder temperatures",
+          "text": "Stick to designated walking routes. Watch for falling snow/ice. Move slowly. Dress in layers. Stay hydrated."
+        },
+        {
+          "id": 6,
+          "title": "Driving in Winter Weather",
+          "text": "Check tires, lights, windows, antifreeze, and oil. Ensure vehicle is winter-ready."
+        },
+        {
+          "id": 7,
+          "title": "Signs & symptoms of cold temperature illness",
+          "text": "Early symptoms: tingling, numbness, fatigue, confusion, shivering. Late symptoms: dilated pupils, slowed breathing, loss of consciousness. Report immediately; call emergency services if needed."
+        }
+      ]
+    },
+    {
+      "code": "EOP",
+      "name": "Eyes on Path & Housekeeping",
+      "messages": [
+        {
+          "id": 1,
+          "title": "General STF Prevention",
+          "text": "Never run on the shopfloor. Keep your eyes on your path. Avoid distractions. Stay alert for moving vehicles. Use handrails. Look for wet spots. Throw away trash immediately."
+        },
+        {
+          "id": 2,
+          "title": "Housekeeping Best Practices",
+          "text": "Remove damaged pallets. Manage wrapping tails. Store securing equipment properly. Secure cables. Use correct bin sizes. Inspect high-risk areas regularly."
+        },
+        {
+          "id": 3,
+          "title": "Packaging & Materials Storage",
+          "text": "Remove damaged pallets. Manage foil tails. Store straps and coral lines properly. Store load securing bars safely. Secure cables. Avoid trip hazards from tools."
+        },
+        {
+          "id": 4,
+          "title": "Cart Safety",
+          "text": "Do not push carts from the side or back. Ensure doors are secured. Beware of pinch points. Never force stuck carts — report to a manager."
+        },
+        {
+          "id": 5,
+          "title": "Working with Equipment Safely",
+          "text": "Do not use excessive force on stuck items. Do not try to catch falling items. Stabilize unstable loads or seek help."
+        },
+        {
+          "id": 6,
+          "title": "Waste Management",
+          "text": "Use correct bin sizes for straps. Follow bin emptying schedules. Never leave trash on the floor."
+        },
+        {
+          "id": 7,
+          "title": "Impact of Poor Housekeeping",
+          "text": "Poor housekeeping contributes to nearly 30% of incidents. Common issues: blocked walkways, cluttered paths, loose tape, trash accumulation. Poor housekeeping forces rule violations."
         }
       ]
     }
