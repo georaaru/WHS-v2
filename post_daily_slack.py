@@ -8,39 +8,52 @@ from slack_sdk.errors import SlackApiError
 #  ENVIRONMENT VALUES
 # ---------------------------------------------------------------
 SLACK_BOT_TOKEN = os.environ.get("SLACK_BOT_TOKEN")
-CHANNEL_IDS = os.environ.get("SLACK_CHANNEL_IDS", "")  # comma-separated string
+CHANNEL_IDS = os.environ.get("SLACK_CHANNEL_IDS", "")  # comma-separated
 # ---------------------------------------------------------------
 #  CONSTANTS
 # ---------------------------------------------------------------
-# Weekly cycle: Sunday → Saturday
-# Custom week numbering starts from this Sunday.
-# With this anchor, the week that contains 26 Nov 2025 is week 48.
+# Weeks run Sunday → Saturday, grouped from this anchor Sunday.
+# We also define explicit mappings for certain week numbers.
 ANCHOR_WEEK_START = date(2024, 12, 29)  # Sunday
-# Daily rotation anchor (used to rotate messages within a topic)
+# Used only for rotating daily messages within each topic
 ANCHOR_DATE = date(2025, 1, 1)
+# Optional explicit mapping for WHS custom week numbers
+# (relative to ANCHOR_WEEK_START-based week calculation)
+WHS_WEEK_TOPIC_CODES = {
+    48: "MSD",
+    49: "SFM",
+    50: "CONV",
+    51: "COLD",
+    52: "EOP",
+}
 # ---------------------------------------------------------------
 #  PER-TOPIC EMOJI SETS
 # ---------------------------------------------------------------
 TOPIC_EMOJIS = {
-    "MSD": {  # MSD Prevention
-        "header": ":muscle:",                     # before "This week's topic"
-        "title": ":bulb:",                     # before title
-        "footer": "Safe-To-Go :safetogo:",
+    "MSD": {   # MSD Prevention
+        "header": ":muscle:",
+        "title": ":bulb:",
+        "footer": "Safe-to-go :safetogo:",
     },
-    "SFM": {  # Safety Feedback Mechanism
-        "header": ":speech_balloon:",                    # emphasises communication
-        "title": ":busts_in_silhouette:",                     # people/feedback
-        "footer": "Safe-To-Go :safetogo:",
+    "SFM": {   # Safety Feedback Mechanism
+        "header": ":speech_balloon:",
+        "title": ":busts_in_silhouette:",
+        "footer": "Safe-to-go :safetogo:",
     },
     "CONV": {  # Conveyor Safety
-        "header": ":package:",                    # conveyors & parcels
-        "title": ":warning:",                    # hazard awareness
-        "footer": "Safe-To-Go :safetogo:",
+        "header": ":package:",
+        "title": ":warning:",
+        "footer": "Safe-to-go :safetogo:",
     },
     "COLD": {  # Cold Stress Prevention
-        "header": ":snowflake:",                    # cold
-        "title": ":gloves:",                     # PPE for cold
-        "footer": "Safe-To-Go :safetogo:",
+        "header": ":snowflake:",
+        "title": ":gloves:",
+        "footer": "Safe-to-go :safetogo:",
+    },
+    "EOP": {   # Eyes on Path & Housekeeping
+        "header": ":eyes:",
+        "title": ":broom:",
+        "footer": "Safe-to-go :safetogo:",
     },
 }
 # ---------------------------------------------------------------
@@ -49,14 +62,14 @@ TOPIC_EMOJIS = {
 def strip_prefix(text: str, prefix: str) -> str:
     """
     Remove the prefix (topic or title) from the body if repeated.
-    Makes Slack message cleaner and avoids duplicate bold text.
+    Keeps Slack message cleaner and avoids duplicate bold text.
     """
     if not prefix:
         return text
     t = text.lstrip()
     if t.lower().startswith(prefix.lower()):
-        t = t[len(prefix):]           # remove prefix
-        t = t.lstrip(" :–-")          # remove punctuation and spaces
+        t = t[len(prefix):]
+        t = t.lstrip(" :–-")
         return t.lstrip()
     return text
 # ---------------------------------------------------------------
@@ -73,28 +86,36 @@ def load_topics(path: str | Path = "whs_topics.json") -> dict:
 # ---------------------------------------------------------------
 def pick_weekly_topic(topics_json: dict, today: date | None = None) -> dict:
     """
-    Week starts Sunday, ends Saturday.
-    Weekly topic rotates based on a custom week number derived from
-    ANCHOR_WEEK_START.
-    custom_week_number = weeks since anchor (0-based) + 1
-    topic index = custom_week_number % len(weekly_topics)
-    With ANCHOR_WEEK_START = 2024-12-29 and 4 topics ordered as:
-      0: MSD, 1: SFM, 2: CONV, 3: COLD
-    You get:
-      week 48 -> MSD
-      week 49 -> SFM
-      week 50 -> CONV
-      week 51 -> COLD
-      ... then repeats every 4 weeks.
+    Choose this week's topic.
+Compute a custom week number based on ANCHOR_WEEK_START with
+       Sunday–Saturday weeks.
+If the custom week number is in WHS_WEEK_TOPIC_CODES, use that
+       topic code (e.g., week 48 -> MSD, 49 -> SFM, etc.).
+Otherwise, fall back to simple rotation by modulo across all
+       defined topics.
     """
     if today is None:
         today = date.today()
     weekly_topics = topics_json.get("weekly_topics", [])
     if not weekly_topics:
         raise ValueError("weekly_topics missing in JSON")
+    # 1) Work out week number (Sunday–Saturday) relative to anchor
     days_since_anchor = (today - ANCHOR_WEEK_START).days
-    week_offset = days_since_anchor // 7  # integer weeks since anchor
+    week_offset = days_since_anchor // 7
     custom_week_number = week_offset + 1
+    # 2) Try explicit mapping first
+    mapped_code = WHS_WEEK_TOPIC_CODES.get(custom_week_number)
+    if mapped_code:
+        # Find first topic with that code
+        for topic in weekly_topics:
+            if topic.get("code") == mapped_code:
+                return topic
+        # If mapping code is missing from JSON, fall back to rotation
+        print(
+            f"Warning: week {custom_week_number} mapped to '{mapped_code}' "
+            f"but no such code found in JSON. Falling back to rotation."
+        )
+    # 3) Fallback: simple rotation by modulo
     idx = custom_week_number % len(weekly_topics)
     return weekly_topics[idx]
 # ---------------------------------------------------------------
@@ -102,7 +123,7 @@ def pick_weekly_topic(topics_json: dict, today: date | None = None) -> dict:
 # ---------------------------------------------------------------
 def pick_daily_message(topic: dict, today: date | None = None) -> dict:
     """
-    Pick a different message each day inside the topic.
+    Pick a different message each day within the chosen topic.
     """
     if today is None:
         today = date.today()
@@ -111,24 +132,26 @@ def pick_daily_message(topic: dict, today: date | None = None) -> dict:
         raise ValueError(f"No messages in topic {topic.get('code')}")
     days_since_anchor = (today - ANCHOR_DATE).days
     idx = days_since_anchor % len(messages)
-    return messages[idx]  # returns dict
+    return messages[idx]
 # ---------------------------------------------------------------
-#  BUILD SLACK FORMATTED MESSAGE
+#  BUILD SLACK MESSAGE TEXT
 # ---------------------------------------------------------------
 def build_slack_text(topic: dict, message: dict) -> str:
     topic_name = topic.get("name", "WHS Theme")
     title = message.get("title", "Safety Tip")
     raw_body = message.get("text", "")
     code = topic.get("code", "").upper()
-    # Remove repeated topic/title from body
+    # Clean up repeats of topic name or title at the start of body
     body = strip_prefix(raw_body, topic_name)
     body = strip_prefix(body, title)
-    # Pick emoji set for this topic (fallback if missing)
-    emoji_set = TOPIC_EMOJIS.get(code, {
-        "header": ":helmet_with_white_cross:",
-        "title": ":bulb:",
-        "footer": "Safe-To-Go :safetogo:",
-    })
+    emoji_set = TOPIC_EMOJIS.get(
+        code,
+        {
+            "header": ":helmet_with_white_cross:",
+            "title": ":bulb:",
+            "footer": "Safe-to-go :safetogo:",
+        },
+    )
     header_emoji = emoji_set["header"]
     title_emoji = emoji_set["title"]
     footer_text = emoji_set["footer"]
@@ -139,7 +162,7 @@ def build_slack_text(topic: dict, message: dict) -> str:
         f"{footer_text}"
     )
 # ---------------------------------------------------------------
-#  MAIN MESSAGE PICKER
+#  PICK MESSAGE FOR TODAY
 # ---------------------------------------------------------------
 def pick_message_for_today() -> str:
     topics_json = load_topics()
@@ -157,8 +180,8 @@ def post_to_slack(text: str) -> None:
     if not CHANNEL_IDS:
         raise SystemExit("Missing SLACK_CHANNEL_IDS.")
     client = WebClient(token=SLACK_BOT_TOKEN)
-    channel_list = [c.strip() for c in CHANNEL_IDS.split(",") if c.strip()]
-    for channel_id in channel_list:
+    channels = [c.strip() for c in CHANNEL_IDS.split(",") if c.strip()]
+    for channel_id in channels:
         try:
             client.chat_postMessage(channel=channel_id, text=text)
             print(f"Sent message to {channel_id}")
