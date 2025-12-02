@@ -13,18 +13,19 @@ CHANNEL_IDS = os.environ.get("SLACK_CHANNEL_IDS", "")  # comma-separated
 #  CONSTANTS
 # ---------------------------------------------------------------
 # Weeks run Sunday → Saturday, grouped from this anchor Sunday.
-# We also define explicit mappings for certain week numbers.
 ANCHOR_WEEK_START = date(2024, 12, 29)  # Sunday
 # Used only for rotating daily messages within each topic
 ANCHOR_DATE = date(2025, 1, 1)
-# Optional explicit mapping for WHS custom week numbers
-# (relative to ANCHOR_WEEK_START-based week calculation)
+# Explicit mapping for WHS custom week numbers
+# After Cold Stress (week 51), we repeat MSD (week 52),
+# and then Eyes on Path (week 53).
 WHS_WEEK_TOPIC_CODES = {
-    48: "MSD",
-    49: "SFM",
-    50: "CONV",
-    51: "COLD",
-    52: "EOP",
+    48: "MSD",   # week starting 23 Nov 2025
+    49: "SFM",   # week starting 30 Nov 2025
+    50: "CONV",  # week starting 07 Dec 2025
+    51: "COLD",  # week starting 14 Dec 2025
+    52: "MSD",   # week starting 21 Dec 2025 (repeat MSD)
+    53: "EOP",   # week starting 28 Dec 2025 (Eyes on Path)
 }
 # ---------------------------------------------------------------
 #  PER-TOPIC EMOJI SETS
