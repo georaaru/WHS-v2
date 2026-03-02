@@ -124,6 +124,211 @@
       ]
     },
     {
+      "code": "STAIR",
+      "name": "Stair Safety",
+      "messages": [
+        {
+          "id": 1,
+          "title": "Use Handrails",
+          "text": "Always use the handrail when ascending or descending stairs. Handrails provide stability and significantly reduce fall risk, especially when carrying light items."
+        },
+        {
+          "id": 2,
+          "title": "One Step At A Time",
+          "text": "Avoid rushing or skipping steps. Maintain a steady pace and ensure your full foot is placed securely on each step."
+        },
+        {
+          "id": 3,
+          "title": "Do Not Use Mobile Devices",
+          "text": "Do not use mobile devices or engage in distracting activities while using stairs. Keep your focus on your footing and surroundings amd attention on your path."
+        },
+        {
+          "id": 4,
+          "title": "Keep Stairs Clear",
+          "text": "Ensure stairways remain free from debris, packaging, liquids, or obstructions. Report blocked or cluttered stairs immediately."
+        },
+        {
+          "id": 5,
+          "title": "Wear Proper Footwear",
+          "text": "Wear safety footwear with adequate grip. Worn soles or smooth surfaces reduce traction and increase fall risk."
+        },
+        {
+          "id": 6,
+          "title": "Report Damaged Steps",
+          "text": "Immediately report loose handrails, damaged steps, or worn anti-slip surfaces."
+        },
+        {
+          "id": 7,
+          "title": "Maintain Three Points Of Contact",
+          "text": "Maintain three points of contact whenever possible to maximise stability while using stairs."
+        }
+      ]
+    },
+    {
+      "code": "WET",
+      "name": "Wet Floor Hazards",
+      "messages": [
+        {
+          "id": 1,
+          "title": "Report Spills Immediately",
+          "text": "Report any liquid spills immediately to prevent slip hazards and initiate clean-up procedures - use of Radios throughout the FC or approach leadership team for help. Do not assume someone else has reported it."
+        },
+        {
+          "id": 2,
+          "title": "Use Warning Signage",
+          "text": "Place wet floor signage/cones in visible locations where spills are observed. Ensure signs remain in place until the surface is completely dry and safe for normal traffic."
+        },
+        {
+          "id": 3,
+          "title": "Walk Carefully On Wet Surfaces",
+          "text": "If the situation is unavoidable, take shorter steps, keep the centre of gravity over your feet, and walk slowly on wet surfaces. Avoid sudden turns or quick movements that increase slip risk."
+        },
+        {
+          "id": 4,
+          "title": "Wear Slip-Resistant Footwear",
+          "text": "Ensure safety footwear provides adequate traction, especially in areas prone to moisture. Worn-out soles reduce grip and increase the likelihood of slips."
+        },
+        {
+          "id": 5,
+          "title": "Check Entry Points",
+          "text": "Entrances and loading areas may become slippery during rain or snow. Ensure absorbent mats are positioned correctly and replaced if saturated. Watch for tracked-in moisture."
+        },
+        {
+          "id": 6,
+          "title": "Avoid Distractions",
+          "text": "Stay alert when walking through potentially wet areas and avoid distractions such as mobile devices or conversations that reduce situational awareness."
+        },
+        {
+          "id": 7,
+          "title": "Inspect High-Risk Areas",
+          "text": "Regularly inspect wash stations, dock areas, cleaning zones, and break areas for moisture accumulation. Ensure drainage systems function correctly and report recurring wet conditions."
+        }
+      ]
+    },
+    {
+      "code": "OCS",
+      "name": "Object And Cart Safety",
+      "messages": [
+        {
+          "id": 1,
+          "title": "Push Carts Safely",
+          "text": "Push carts using designated handles and ensure your path is clear. Maintain full visibility ahead before moving."
+        },
+        {
+          "id": 2,
+          "title": "Avoid Overloading",
+          "text": "Do not overload carts beyond safe height or weight limits. Excess weight affects braking and stability."
+        },
+        {
+          "id": 3,
+          "title": "Secure Loads Properly",
+          "text": "Ensure items are stacked evenly and secured to prevent shifting during movement."
+        },
+        {
+          "id": 4,
+          "title": "Beware Of Pinch Points",
+          "text": "Keep hands and fingers clear of wheels, hinges, and structural joints to prevent crush injuries."
+        },
+        {
+          "id": 5,
+          "title": "Inspect Before Use",
+          "text": "Check wheels, frames, and braking mechanisms before moving carts. Report defects immediately."
+        },
+        {
+          "id": 6,
+          "title": "Use Proper Body Mechanics",
+          "text": "Engage your core, keep your back straight, and avoid twisting while pushing or manoeuvring carts."
+        },
+        {
+          "id": 7,
+          "title": "Report Damaged Equipment",
+          "text": "Damaged carts or unstable objects increase injury risk. Remove them from service and notify your manager."
+        }
+      ]
+    },
+    {
+      "code": "POA",
+      "name": "Path Obstacle Awareness",
+      "messages": [
+        {
+          "id": 1,
+          "title": "Keep Eyes On Your Path",
+          "text": "Scan ahead while walking and anticipate potential hazards. Awareness reduces unexpected trips or collisions."
+        },
+        {
+          "id": 2,
+          "title": "Avoid Shortcuts",
+          "text": "Use designated pedestrian walkways rather than cutting through operational areas."
+        },
+        {
+          "id": 3,
+          "title": "Remove Immediate Hazards",
+          "text": "Clear loose straps, packaging, or debris from walkways immediately if safe to do so."
+        },
+        {
+          "id": 4,
+          "title": "Watch For Moving Equipment",
+          "text": "Remain alert around forklifts, pallet trucks, and other moving equipment, especially at blind corners."
+        },
+        {
+          "id": 5,
+          "title": "Report Blocked Walkways",
+          "text": "Blocked pedestrian routes increase collision risk. Inform your manager immediately."
+        },
+        {
+          "id": 6,
+          "title": "Ensure Adequate Lighting",
+          "text": "Poor visibility increases trip risk. Report malfunctioning lights promptly."
+        },
+        {
+          "id": 7,
+          "title": "Increase Awareness During Peak Activity",
+          "text": "High-traffic periods require increased situational awareness. Slow down and move deliberately."
+        }
+      ]
+    },
+    {
+      "code": "FLOOR",+
+      "name": "Floor Hazards",
+      "messages": [
+        {
+          "id": 1,
+          "title": "Identify Uneven Surfaces",
+          "text": "Watch for cracks, raised edges, damaged tiles, or uneven flooring that may cause trips."
+        },
+        {
+          "id": 2,
+          "title": "Secure Cables Properly",
+          "text": "Ensure cables and extension leads are routed away from walkways and secured to prevent tripping."
+        },
+        {
+          "id": 3,
+          "title": "Manage Packaging Waste",
+          "text": "Wrapping tails, straps, and loose materials must be removed promptly to prevent slips and trips."
+        },
+        {
+          "id": 4,
+          "title": "Respect Floor Markings",
+          "text": "Follow marked pedestrian lanes and hazard zones to maintain safe traffic flow."
+        },
+        {
+          "id": 5,
+          "title": "Report Damaged Flooring",
+          "text": "Immediately report broken tiles, loose panels, or damaged anti-slip surfaces."
+        },
+        {
+          "id": 6,
+          "title": "Avoid Cluttered Zones",
+          "text": "Do not walk through cluttered areas. Clear hazards or request assistance before proceeding."
+        },
+        {
+          "id": 7,
+          "title": "Increase Housekeeping Checks",
+          "text": "High-traffic areas require frequent inspections to reduce slip and trip incidents."
+        }
+      ]
+    },
+    {
       "code": "COLD",
       "name": "Cold Stress Prevention",
       "messages": [
