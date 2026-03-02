@@ -50,17 +50,17 @@ STF_CAMPAIGN_WEEKS = {
 #  PER-TOPIC EMOJI SETS
 # ---------------------------------------------------------------
 TOPIC_EMOJIS = {
-    "MSD": {"header": ":muscle:", "title": ":bulb:", "footer": "Safe-to-go :safetogo:"},
-    "SFM": {"header": ":speech_balloon:", "title": ":busts_in_silhouette:", "footer": "Safe-to-go :safetogo:"},
-    "CONV": {"header": ":package:", "title": ":warning:", "footer": "Safe-to-go :safetogo:"},
-    "COLD": {"header": ":snowflake:", "title": ":gloves:", "footer": "Safe-to-go :safetogo:"},
-    "EOP": {"header": ":eyes:", "title": ":broom:", "footer": "Safe-to-go :safetogo:"},
+    "MSD": {"header": ":muscle:", "title": ":bulb:", "footer": "Safe-to-Go :safetogo:"},
+    "SFM": {"header": ":speech_balloon:", "title": ":busts_in_silhouette:", "footer": "Safe-to-Go :safetogo:"},
+    "CONV": {"header": ":package:", "title": ":warning:", "footer": "Safe-to-Go :safetogo:"},
+    "COLD": {"header": ":snowflake:", "title": ":gloves:", "footer": "Safe-to-Go :safetogo:"},
+    "EOP": {"header": ":eyes:", "title": ":broom:", "footer": "Safe-to-Go :safetogo:"},
 
     # Campaign topics
-    "STAIR": {"header": ":ladder:", "title": ":warning:", "footer": "Safe-to-go :safetogo:"},
-    "WET": {"header": ":droplet:", "title": ":warning:", "footer": "Safe-to-go :safetogo:"},
-    "OCS": {"header": ":shopping_trolley:", "title": ":package:", "footer": "Safe-to-go :safetogo:"},
-    "POA": {"header": ":construction:", "title": ":eyes:", "footer": "Safe-to-go :safetogo:"},
+    "STAIR": {"header": ":ladder:", "title": ":warning:", "footer": "Safe-to-Go :safetogo:"},
+    "WET": {"header": ":droplet:", "title": ":warning:", "footer": "Safe-to-Go :safetogo:"},
+    "OCS": {"header": ":shopping_trolley:", "title": ":package:", "footer": "Safe-to-Go :safetogo:"},
+    "POA": {"header": ":construction:", "title": ":eyes:", "footer": "Safe-to-Go :safetogo:"},
 }
 
 # ---------------------------------------------------------------
