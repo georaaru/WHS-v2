@@ -1,209 +1,209 @@
 {
-  "weekly_topics": [
-    {
-      "code": "MSD",
-      "name": "MSD Prevention",
-      "messages": [
-        {
-          "id": 1,
-          "title": "Use Your Powerzone",
-          "text": "Keeping items in your powerzone — the area from mid-thigh to mid-chest — helps reduce strain when lifting, lowering, and turning."
-        },
-        {
-          "id": 2,
-          "title": "Use The Right PPE",
-          "text": "Using correct PPE :gloves:, such as gloves for proper grasping, reduces the risk of musculoskeletal disorders (MSDs) like sprains and strains."
-        },
-        {
-          "id": 3,
-          "title": "Switch Sides To Reduce Strain",
-          "text": "Alternating between your left and right sides helps maintain balance and reduces repetitive strain."
-        },
-        {
-          "id": 4,
-          "title": "Practise The Team Lift",
-          "text": "Test the weight before lifting and use both hands. Ask for help if an item is too heavy or awkward."
-        },
-        {
-          "id": 5,
-          "title": "Stretch It Out",
-          "text": "Stretch before and after work to reduce fatigue and improve range of motion."
-        },
-        {
-          "id": 6,
-          "title": "Select The Right Tool",
-          "text": "Use the correct equipment in the proper way to reduce effort and avoid unnecessary strain."
-        },
-        {
-          "id": 7,
-          "title": "Reduce Exposure To MSD Risk Factors",
-          "text": "Test the weight before lifting, keep items close to your body, and take micro-breaks to stretch while working."
-        }
-      ]
-    },
-    {
-      "code": "SFM",
-      "name": "Safety Feedback Mechanism",
-      "messages": [
-        {
-          "id": 1,
-          "title": "Empower Associates To Participate",
-          "text": "Create simple ways for associates to raise safety concerns and suggestions. Ensure everyone across business units can engage."
-        },
-        {
-          "id": 2,
-          "title": "Close The Feedback Loop",
-          "text": "Provide updates on concerns raised and track them to completion. Follow up to demonstrate that safety feedback is valued."
-        },
-        {
-          "id": 3,
-          "title": "Promote Participation In Feedback",
-          "text": "Encourage safety discussions daily through digital channels, boards, and direct conversations."
-        },
-        {
-          "id": 4,
-          "title": "Dragonfly Program Features",
-          "text": "Ensure kiosks function properly, allow reporting from any device, and provide real-time visibility with manager follow-up through AUSTIN."
-        },
-        {
-          "id": 5,
-          "title": "Structured Feedback Collection",
-          "text": "Use skip-levels, Gemba Walks, VOA MyVoice, and safety boards. Track and prioritise all feedback for improvement opportunities."
-        },
-        {
-          "id": 6,
-          "title": "Recognition And Engagement",
-          "text": "Reward participation, use gamification, issue awards, and share positive safety stories."
-        },
-        {
-          "id": 7,
-          "title": "Encourage Reporting",
-          "text": "Associates can report concerns through managers, Safety Circles, Gemba Boards, scanner messaging, and structured safety programs."
-        }
-      ]
-    },
-    {
-      "code": "CONV",
-      "name": "Conveyor Safety",
-      "messages": [
-        {
-          "id": 1,
-          "title": "General Conveyor Behaviour",
-          "text": "Never climb over or under conveyors. Do not sit, lean, or reach underneath. Use designated stairways and never take shortcuts."
-        },
-        {
-          "id": 2,
-          "title": "Clothing And Personal Items",
-          "text": "Secure loose clothing and hair. Tie up long hair and secure beards over 3 inches. Avoid jewellery or accessories that may get caught. Ensure badge lanyards have breakaway clasps."
-        },
-        {
-          "id": 3,
-          "title": "Jam Clearing",
-          "text": "Only trained and authorised personnel should clear jams. Never climb onto conveyors. Use jam poles and report if a blockage cannot be cleared safely."
-        },
-        {
-          "id": 4,
-          "title": "Reporting Issues",
-          "text": "Report conveyor hazards immediately. Identify the nearest emergency shutoff switch and ensure it remains accessible."
-        },
-        {
-          "id": 5,
-          "title": "Emergency Preparedness",
-          "text": "Locate the closest emergency shutoff device. Keep it clear and know how to use pull cords and emergency stop buttons."
-        },
-        {
-          "id": 6,
-          "title": "Conveyor PPE",
-          "text": "Wear suitable PPE including safety gloves and high-visibility vests. Secure loose items and never climb, sit, walk, or ride on conveyors."
-        },
-        {
-          "id": 7,
-          "title": "Operating Procedures",
-          "text": "Maintain communication with coworkers, keep work areas clean, remain alert, and report unusual noises or operation issues."
-        }
-      ]
-    },
-    {
-      "code": "COLD",
-      "name": "Cold Stress Prevention",
-      "messages": [
-        {
-          "id": 1,
-          "title": "Prevent Cold Temperature Illness",
-          "text": "Bring extra clothing such as socks, eat nutritious food, cover hands and head, take breaks in warm areas, and wear layered protective clothing."
-        },
-        {
-          "id": 2,
-          "title": "Driving In Winter",
-          "text": "Turn on lights, adapt speed, increase stopping distance, clear windows and mirrors, and slow down in icy or wet conditions."
-        },
-        {
-          "id": 3,
-          "title": "Prevent Slips, Trips And Falls",
-          "text": "Keep your head over shoulders and hips over ankles, move slowly, wear traction footwear, and take care when entering or exiting vehicles."
-        },
-        {
-          "id": 4,
-          "title": "Stay Visible During Dark Hours",
-          "text": "Use flashlights and wear high-visibility or reflective clothing during reduced daylight hours."
-        },
-        {
-          "id": 5,
-          "title": "Be Prepared For Colder Temperatures",
-          "text": "Stick to designated routes, watch for falling snow or ice, dress in layers, move carefully, and stay hydrated."
-        },
-        {
-          "id": 6,
-          "title": "Prepare Vehicles For Winter Weather",
-          "text": "Check tyres, lights, windows, antifreeze levels, and oil to ensure vehicles are winter-ready."
-        },
-        {
-          "id": 7,
-          "title": "Recognise Cold Stress Symptoms",
-          "text": "Early signs include tingling, fatigue, confusion, and shivering. Late signs include slowed breathing or loss of consciousness. Report immediately and call emergency services if required."
-        }
-      ]
-    },
-    {
-      "code": "EOP",
-      "name": "Eyes on Path & Housekeeping",
-      "messages": [
-        {
-          "id": 1,
-          "title": "General STF Prevention",
-          "text": "Never run on the shopfloor. Keep your eyes on your path, avoid distractions, use handrails, and remove trash immediately."
-        },
-        {
-          "id": 2,
-          "title": "Housekeeping Best Practices",
-          "text": "Remove damaged pallets, manage wrapping tails, store equipment correctly, secure cables, and inspect high-risk areas regularly."
-        },
-        {
-          "id": 3,
-          "title": "Packaging And Materials Storage",
-          "text": "Properly manage straps, foil tails, load securing bars, and cables to prevent trip hazards."
-        },
-        {
-          "id": 4,
-          "title": "Cart Safety",
-          "text": "Do not push carts from the side or back. Ensure doors are secured and report stuck carts rather than using force."
-        },
-        {
-          "id": 5,
-          "title": "Working With Equipment Safely",
-          "text": "Avoid excessive force, do not attempt to catch falling items, and stabilise unstable loads before continuing work."
-        },
-        {
-          "id": 6,
-          "title": "Waste Management",
-          "text": "Use appropriate bin sizes, follow emptying schedules, and never leave waste materials on the floor."
-        },
-        {
-          "id": 7,
-          "title": "Impact Of Poor Housekeeping",
-          "text": "Blocked walkways, clutter, loose tape, and accumulated waste significantly increase slip and trip incidents."
-        }
-      ]
-    }
-  ]
+  "weekly_topics": [
+    {
+      "code": "MSD",
+      "name": "MSD Prevention",
+      "messages": [
+        {
+          "id": 1,
+          "title": "Use Your Powerzone",
+          "text": "Keeping items in your powerzone — the area from mid-thigh to mid-chest — helps reduce strain when lifting, lowering, and turning."
+        },
+        {
+          "id": 2,
+          "title": "Use The Right PPE",
+          "text": "Using correct PPE :gloves:, such as gloves for proper grasping, reduces the risk of musculoskeletal disorders (MSDs) like sprains and strains."
+        },
+        {
+          "id": 3,
+          "title": "Switch Sides To Reduce Strain",
+          "text": "Alternating between your left and right sides helps maintain balance and reduces repetitive strain."
+        },
+        {
+          "id": 4,
+          "title": "Practise The Team Lift",
+          "text": "Test the weight before lifting and use both hands. Ask for help if an item is too heavy or awkward."
+        },
+        {
+          "id": 5,
+          "title": "Stretch It Out",
+          "text": "Stretch before and after work to reduce fatigue and improve range of motion."
+        },
+        {
+          "id": 6,
+          "title": "Select The Right Tool",
+          "text": "Use the correct equipment in the proper way to reduce effort and avoid unnecessary strain."
+        },
+        {
+          "id": 7,
+          "title": "Reduce Exposure To MSD Risk Factors",
+          "text": "Test the weight before lifting, keep items close to your body, and take micro-breaks to stretch while working."
+        }
+      ]
+    },
+    {
+      "code": "SFM",
+      "name": "Safety Feedback Mechanism",
+      "messages": [
+        {
+          "id": 1,
+          "title": "Empower Associates To Participate",
+          "text": "Create simple ways for associates to raise safety concerns and suggestions. Ensure everyone across business units can engage."
+        },
+        {
+          "id": 2,
+          "title": "Close The Feedback Loop",
+          "text": "Provide updates on concerns raised and track them to completion. Follow up to demonstrate that safety feedback is valued."
+        },
+        {
+          "id": 3,
+          "title": "Promote Participation In Feedback",
+          "text": "Encourage safety discussions daily through digital channels, boards, and direct conversations."
+        },
+        {
+          "id": 4,
+          "title": "Dragonfly Program Features",
+          "text": "Ensure kiosks function properly, allow reporting from any device, and provide real-time visibility with manager follow-up through AUSTIN."
+        },
+        {
+          "id": 5,
+          "title": "Structured Feedback Collection",
+          "text": "Use skip-levels, Gemba Walks, VOA MyVoice, and safety boards. Track and prioritise all feedback for improvement opportunities."
+        },
+        {
+          "id": 6,
+          "title": "Recognition And Engagement",
+          "text": "Reward participation, use gamification, issue awards, and share positive safety stories."
+        },
+        {
+          "id": 7,
+          "title": "Encourage Reporting",
+          "text": "Associates can report concerns through managers, Safety Circles, Gemba Boards, scanner messaging, and structured safety programs."
+        }
+      ]
+    },
+    {
+      "code": "CONV",
+      "name": "Conveyor Safety",
+      "messages": [
+        {
+          "id": 1,
+          "title": "General Conveyor Behaviour",
+          "text": "Never climb over or under conveyors. Do not sit, lean, or reach underneath. Use designated stairways and never take shortcuts."
+        },
+        {
+          "id": 2,
+          "title": "Clothing And Personal Items",
+          "text": "Secure loose clothing and hair. Tie up long hair and secure beards over 3 inches. Avoid jewellery or accessories that may get caught. Ensure badge lanyards have breakaway clasps."
+        },
+        {
+          "id": 3,
+          "title": "Jam Clearing",
+          "text": "Only trained and authorised personnel should clear jams. Never climb onto conveyors. Use jam poles and report if a blockage cannot be cleared safely."
+        },
+        {
+          "id": 4,
+          "title": "Reporting Issues",
+          "text": "Report conveyor hazards immediately. Identify the nearest emergency shutoff switch and ensure it remains accessible."
+        },
+        {
+          "id": 5,
+          "title": "Emergency Preparedness",
+          "text": "Locate the closest emergency shutoff device. Keep it clear and know how to use pull cords and emergency stop buttons."
+        },
+        {
+          "id": 6,
+          "title": "Conveyor PPE",
+          "text": "Wear suitable PPE including safety gloves and high-visibility vests. Secure loose items and never climb, sit, walk, or ride on conveyors."
+        },
+        {
+          "id": 7,
+          "title": "Operating Procedures",
+          "text": "Maintain communication with coworkers, keep work areas clean, remain alert, and report unusual noises or operation issues."
+        }
+      ]
+    },
+    {
+      "code": "COLD",
+      "name": "Cold Stress Prevention",
+      "messages": [
+        {
+          "id": 1,
+          "title": "Prevent Cold Temperature Illness",
+          "text": "Bring extra clothing such as socks, eat nutritious food, cover hands and head, take breaks in warm areas, and wear layered protective clothing."
+        },
+        {
+          "id": 2,
+          "title": "Driving In Winter",
+          "text": "Turn on lights, adapt speed, increase stopping distance, clear windows and mirrors, and slow down in icy or wet conditions."
+        },
+        {
+          "id": 3,
+          "title": "Prevent Slips, Trips And Falls",
+          "text": "Keep your head over shoulders and hips over ankles, move slowly, wear traction footwear, and take care when entering or exiting vehicles."
+        },
+        {
+          "id": 4,
+          "title": "Stay Visible During Dark Hours",
+          "text": "Use flashlights and wear high-visibility or reflective clothing during reduced daylight hours."
+        },
+        {
+          "id": 5,
+          "title": "Be Prepared For Colder Temperatures",
+          "text": "Stick to designated routes, watch for falling snow or ice, dress in layers, move carefully, and stay hydrated."
+        },
+        {
+          "id": 6,
+          "title": "Prepare Vehicles For Winter Weather",
+          "text": "Check tyres, lights, windows, antifreeze levels, and oil to ensure vehicles are winter-ready."
+        },
+        {
+          "id": 7,
+          "title": "Recognise Cold Stress Symptoms",
+          "text": "Early signs include tingling, fatigue, confusion, and shivering. Late signs include slowed breathing or loss of consciousness. Report immediately and call emergency services if required."
+        }
+      ]
+    },
+    {
+      "code": "EOP",
+      "name": "Eyes on Path & Housekeeping",
+      "messages": [
+        {
+          "id": 1,
+          "title": "General STF Prevention",
+          "text": "Never run on the shopfloor. Keep your eyes on your path, avoid distractions, use handrails, and remove trash immediately."
+        },
+        {
+          "id": 2,
+          "title": "Housekeeping Best Practices",
+          "text": "Remove damaged pallets, manage wrapping tails, store equipment correctly, secure cables, and inspect high-risk areas regularly."
+        },
+        {
+          "id": 3,
+          "title": "Packaging And Materials Storage",
+          "text": "Properly manage straps, foil tails, load securing bars, and cables to prevent trip hazards."
+        },
+        {
+          "id": 4,
+          "title": "Cart Safety",
+          "text": "Do not push carts from the side or back. Ensure doors are secured and report stuck carts rather than using force."
+        },
+        {
+          "id": 5,
+          "title": "Working With Equipment Safely",
+          "text": "Avoid excessive force, do not attempt to catch falling items, and stabilise unstable loads before continuing work."
+        },
+        {
+          "id": 6,
+          "title": "Waste Management",
+          "text": "Use appropriate bin sizes, follow emptying schedules, and never leave waste materials on the floor."
+        },
+        {
+          "id": 7,
+          "title": "Impact Of Poor Housekeeping",
+          "text": "Blocked walkways, clutter, loose tape, and accumulated waste significantly increase slip and trip incidents."
+        }
+      ]
+    }
+  ]
 }
