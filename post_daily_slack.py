@@ -20,6 +20,10 @@ ANCHOR_DATE = date(2025, 1, 1)
 # After Cold Stress (week 51), we repeat MSD (week 52),
 # and then Eyes on Path (week 53).
 WHS_WEEK_TOPIC_CODES = {
+    10: "STAIR",
+    11: "WET",
+    12: "OCS",
+    13: "POA", 
     48: "MSD",   # week starting 23 Nov 2025
     49: "SFM",   # week starting 30 Nov 2025
     50: "CONV",  # week starting 07 Dec 2025
