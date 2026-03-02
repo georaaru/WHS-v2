@@ -21,7 +21,7 @@ ANCHOR_DATE = date(2025, 1, 1)
 # and then Eyes on Path (week 53).
 WHS_WEEK_TOPIC_CODES = {
     10: "STAIR",
-    11: "WET",
+    11: "WET",
     12: "OCS",
     13: "POA", 
     48: "MSD",   # week starting 23 Nov 2025
