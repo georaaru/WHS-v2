@@ -206,8 +206,7 @@ def build_slack_text(topic: dict, message: dict, today: date) -> str:
 
     return (
         f"{header_text}\n\n"
-        f"{title_emoji} *{title}*\n"
-        f"{body}\n\n"
+        f"{title_emoji} *{title}* – {body}\n\n"
         f"{footer_text}"
     )
 
