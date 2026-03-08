@@ -272,7 +272,6 @@ if image_url:
     )
 
     fallback_text = f"{topic_name} | {title} – {body}"
-
     return {
         "text": fallback_text,
         "blocks": blocks
