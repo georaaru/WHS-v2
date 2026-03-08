@@ -203,16 +203,14 @@ def build_slack_payload(topic, message, today):
         "text": {"type": "mrkdwn", "text": f"{header_emoji} *This week's topic: {topic_name}*"}
     })
 
-    if spot_question and image_url:
-        blocks.append({
-            "type": "section",
-            "text": {"type": "mrkdwn", "text": f":eyes: *Spot the Hazard*\n{spot_question}"},
-            "accessory": {
-                "type": "image",
-                "image_url": image_url,
-                "alt_text": title
-            }
-        })
+    if image_url:
+    blocks.append(
+        {
+            "type": "image",
+            "image_url": image_url,
+            "alt_text": title
+        }
+    )
 
     blocks.append({
         "type": "section",
