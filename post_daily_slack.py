@@ -233,14 +233,21 @@ def build_slack_payload(topic: dict, message: dict, today: date) -> dict:
             }
         )
 
-    if image_url:
-        blocks.append(
-            {
+if image_url:
+    blocks.append(
+        {
+            "type": "section",
+            "text": {
+                "type": "mrkdwn",
+                "text": f":eyes: *Spot the Hazard*\n{spot_question}"
+            },
+            "accessory": {
                 "type": "image",
                 "image_url": image_url,
                 "alt_text": title
             }
-        )
+        }
+    )
 
     blocks.append(
         {
