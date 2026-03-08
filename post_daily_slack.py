@@ -252,15 +252,15 @@ def build_slack_payload(topic: dict, message: dict, today: date) -> dict:
     })
 
     # Footer
-    blocks.append({
-        "type": "context",
-        "elements": [
-            {
-                "type": "mrkdwn",
-                "text": footer_text
-            }
-        ]
-    })
+    blocks.append(
+    {
+        "type": "section",
+        "text": {
+            "type": "mrkdwn",
+            "text": footer_text
+        }
+    }
+)
 
     fallback_text = f"{topic_name} | {title} – {body}"
 
