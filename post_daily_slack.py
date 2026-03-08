@@ -252,7 +252,7 @@ def build_slack_payload(topic: dict, message: dict, today: date) -> dict:
     # Footer
     blocks.append({
         "type": "context",
-        "elements": [
+        "text": [
             {
                 "type": "mrkdwn",
                 "text": footer_text
