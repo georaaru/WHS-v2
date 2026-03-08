@@ -174,6 +174,8 @@ def pick_daily_message(topic: dict, today: date | None = None) -> dict:
 #  BUILD SLACK MESSAGE TEXT (WITH STF CAMPAIGN HEADER OVERRIDE)
 # ---------------------------------------------------------------
 
+
+
 def build_slack_payload(topic: dict, message: dict, today: date) -> dict:
     topic_name = topic.get("name", "WHS Theme")
     title = message.get("title", "Safety Tip")
@@ -252,7 +254,7 @@ def build_slack_payload(topic: dict, message: dict, today: date) -> dict:
     # Footer
     blocks.append({
         "type": "context",
-        "text": [
+        "elements": [
             {
                 "type": "mrkdwn",
                 "text": footer_text
@@ -266,6 +268,9 @@ def build_slack_payload(topic: dict, message: dict, today: date) -> dict:
         "text": fallback_text,
         "blocks": blocks
     }
+
+
+
 
 
 # ---------------------------------------------------------------
