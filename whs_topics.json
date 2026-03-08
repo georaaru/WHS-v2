@@ -171,6 +171,8 @@
         {
           "id": 1,
           "title": "Report Spills Immediately",
+          "spot_question": "Can you spot the hazard in this walkway?",
+          "image": "https://raw.githubusercontent.com/georaaru/WHS-v2/main/wet_floor_01.jpg",
           "text": "Report any liquid spills immediately to prevent slip hazards and initiate clean-up procedures - use of Radios throughout the FC or approach leadership team for help. Do not assume someone else has reported it."
         },
         {
@@ -191,6 +193,8 @@
         {
           "id": 5,
           "title": "Check Entry Points",
+          "spot_question": "Can you spot the hazard in this walkway?",
+          "image": "https://raw.githubusercontent.com/georaaru/WHS-v2/main/wet_floor_01.jpg",
           "text": "Entrances and loading areas may become slippery during rain or snow. Ensure absorbent mats are positioned correctly and replaced if saturated. Watch for tracked-in moisture."
         },
         {
