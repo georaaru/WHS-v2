@@ -174,7 +174,8 @@ def pick_daily_message(topic: dict, today: date | None = None) -> dict:
 #  BUILD SLACK MESSAGE TEXT (WITH STF CAMPAIGN HEADER OVERRIDE)
 # ---------------------------------------------------------------
 
-def build_slack_payload(topic: dict, message: dict, today: date) -> dict:
+
+def build_slack_payload(topic, message, today):
     topic_name = topic.get("name", "WHS Theme")
     title = message.get("title", "Safety Tip")
     raw_body = message.get("text", "")
@@ -183,95 +184,48 @@ def build_slack_payload(topic: dict, message: dict, today: date) -> dict:
     spot_question = message.get("spot_question")
     image_url = message.get("image")
 
-    # Clean up repeats
     body = strip_prefix(raw_body, topic_name)
     body = strip_prefix(body, title)
 
     emoji_set = TOPIC_EMOJIS.get(
         code,
-        {
-            "header": ":helmet_with_white_cross:",
-            "title": ":bulb:",
-            "footer": "Safe-to-go :safetogo:",
-        },
+        {"header": ":helmet_with_white_cross:", "title": ":bulb:", "footer": "Safe-to-go :safetogo:"}
     )
 
     header_emoji = emoji_set["header"]
     title_emoji = emoji_set["title"]
     footer_text = emoji_set["footer"]
 
-    week_num = whs_week_number(today)
+    blocks = []
 
-    # STF Campaign header override
-    if week_num in STF_CAMPAIGN_WEEKS:
-        campaign_week, campaign_focus = STF_CAMPAIGN_WEEKS[week_num]
-        header_text = (
-            f"{header_emoji} *Slips, Trips, and Falls (STF) Prevention Campaign Implementation*\n"
-            f"Week {campaign_week} – {campaign_focus}"
-        )
-    else:
-        header_text = f"{header_emoji} *This week's topic: {topic_name}*"
+    blocks.append({
+        "type": "section",
+        "text": {"type": "mrkdwn", "text": f"{header_emoji} *This week's topic: {topic_name}*"}
+    })
 
-    blocks = [
-        {
+    if spot_question and image_url:
+        blocks.append({
             "type": "section",
-            "text": {
-                "type": "mrkdwn",
-                "text": header_text
-            }
-        }
-    ]
-    
-    if spot_question:
-        blocks.append(
-            {
-                "type": "section",
-                "text": {
-                    "type": "mrkdwn",
-                    "text": f":eyes: *Spot the Hazard*\n{spot_question}"
-                }
-            }
-        )
-
-if image_url:
-    blocks.append(
-        {
-            "type": "section",
-            "text": {
-                "type": "mrkdwn",
-                "text": f":eyes: *Spot the Hazard*\n{spot_question}"
-            },
+            "text": {"type": "mrkdwn", "text": f":eyes: *Spot the Hazard*\n{spot_question}"},
             "accessory": {
                 "type": "image",
                 "image_url": image_url,
                 "alt_text": title
             }
-        }
-    )
+        })
 
-    blocks.append(
-        {
-            "type": "section",
-            "text": {
-                "type": "mrkdwn",
-                "text": f"{title_emoji} *{title}* – {body}"
-            }
-        }
-    )
+    blocks.append({
+        "type": "section",
+        "text": {"type": "mrkdwn", "text": f"{title_emoji} *{title}* – {body}"}
+    })
 
-    blocks.append(
-        {
-            "type": "context",
-            "elements": [
-                {
-                    "type": "mrkdwn",
-                    "text": footer_text
-                }
-            ]
-        }
-    )
+    blocks.append({
+        "type": "context",
+        "elements": [{"type": "mrkdwn", "text": footer_text}]
+    })
 
     fallback_text = f"{topic_name} | {title} – {body}"
+
     return {
         "text": fallback_text,
         "blocks": blocks
