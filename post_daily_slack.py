@@ -173,19 +173,27 @@ def pick_daily_message(topic: dict, today: date | None = None) -> dict:
 # ---------------------------------------------------------------
 #  BUILD SLACK MESSAGE TEXT (WITH STF CAMPAIGN HEADER OVERRIDE)
 # ---------------------------------------------------------------
-def build_slack_text(topic: dict, message: dict, today: date) -> str:
+
+def build_slack_payload(topic: dict, message: dict, today: date) -> dict:
     topic_name = topic.get("name", "WHS Theme")
     title = message.get("title", "Safety Tip")
     raw_body = message.get("text", "")
     code = topic.get("code", "").upper()
 
-    # Clean up repeats of topic name or title at the start of body
+    spot_question = message.get("spot_question")
+    image_url = message.get("image")
+
+    # Clean up repeats
     body = strip_prefix(raw_body, topic_name)
     body = strip_prefix(body, title)
 
     emoji_set = TOPIC_EMOJIS.get(
         code,
-        {"header": ":helmet_with_white_cross:", "title": ":bulb:", "footer": "Safe-to-go :safetogo:"},
+        {
+            "header": ":helmet_with_white_cross:",
+            "title": ":bulb:",
+            "footer": "Safe-to-go :safetogo:",
+        },
     )
 
     header_emoji = emoji_set["header"]
@@ -194,7 +202,7 @@ def build_slack_text(topic: dict, message: dict, today: date) -> str:
 
     week_num = whs_week_number(today)
 
-    # STF Campaign header override (Weeks 10-13)
+    # STF Campaign header override
     if week_num in STF_CAMPAIGN_WEEKS:
         campaign_week, campaign_focus = STF_CAMPAIGN_WEEKS[week_num]
         header_text = (
@@ -204,28 +212,81 @@ def build_slack_text(topic: dict, message: dict, today: date) -> str:
     else:
         header_text = f"{header_emoji} *This week's topic: {topic_name}*"
 
-    return (
-        f"{header_text}\n\n"
-        f"{title_emoji} *{title}* – {body}\n\n"
-        f"{footer_text}"
+    blocks = [
+        {
+            "type": "section",
+            "text": {
+                "type": "mrkdwn",
+                "text": header_text
+            }
+        }
+    ]
+    
+    if spot_question:
+        blocks.append(
+            {
+                "type": "section",
+                "text": {
+                    "type": "mrkdwn",
+                    "text": f":eyes: *Spot the Hazard*\n{spot_question}"
+                }
+            }
+        )
+
+    if image_url:
+        blocks.append(
+            {
+                "type": "image",
+                "image_url": image_url,
+                "alt_text": title
+            }
+        )
+
+    blocks.append(
+        {
+            "type": "section",
+            "text": {
+                "type": "mrkdwn",
+                "text": f"{title_emoji} *{title}* – {body}"
+            }
+        }
     )
+
+    blocks.append(
+        {
+            "type": "context",
+            "elements": [
+                {
+                    "type": "mrkdwn",
+                    "text": footer_text
+                }
+            ]
+        }
+    )
+
+    fallback_text = f"{topic_name} | {title} – {body}"
+
+    return {
+        "text": fallback_text,
+        "blocks": blocks
+    }
 
 
 # ---------------------------------------------------------------
 #  PICK MESSAGE FOR TODAY
 # ---------------------------------------------------------------
-def pick_message_for_today() -> str:
+def pick_message_for_today():
     topics_json = load_topics()
     today = date.today()
     topic = pick_weekly_topic(topics_json, today)
     message = pick_daily_message(topic, today)
-    return build_slack_text(topic, message, today)
+    return topic, message, today
 
 
 # ---------------------------------------------------------------
 #  SEND TO SLACK
 # ---------------------------------------------------------------
-def post_to_slack(text: str) -> None:
+def post_to_slack(topic: dict, message: dict, today: date) -> None:
     if not SLACK_BOT_TOKEN:
         raise SystemExit("Missing SLACK_BOT_TOKEN.")
     if not CHANNEL_IDS:
@@ -234,20 +295,25 @@ def post_to_slack(text: str) -> None:
     client = WebClient(token=SLACK_BOT_TOKEN)
     channels = [c.strip() for c in CHANNEL_IDS.split(",") if c.strip()]
 
+    payload = build_slack_payload(topic, message, today)
+
     for channel_id in channels:
         try:
-            client.chat_postMessage(channel=channel_id, text=text)
+            client.chat_postMessage(
+                channel=channel_id,
+                text=payload["text"],
+                blocks=payload["blocks"]
+            )
             print(f"Sent message to {channel_id}")
         except SlackApiError as e:
             print(f"Slack error for {channel_id}: {e.response.get('error')}")
-
 
 # ---------------------------------------------------------------
 #  MAIN
 # ---------------------------------------------------------------
 def main():
-    text = pick_message_for_today()
-    post_to_slack(text)
+    topic, message, today = pick_message_for_today()
+    post_to_slack(topic, message, today)
 
 
 if __name__ == "__main__":
