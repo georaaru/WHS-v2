@@ -261,11 +261,15 @@
         {
           "id": 1,
           "title": "Keep Eyes On Your Path",
+          "spot_question": "Scan surroundings always",
+          "image": "https://raw.githubusercontent.com/georaaru/WHS-v2/main/po_01.gif",
           "text": "Scan ahead while walking and anticipate potential hazards. Awareness reduces unexpected trips or collisions."
         },
         {
           "id": 2,
           "title": "Avoid Shortcuts",
+          "spot_question": "Stick to 5S",
+          "image": "https://raw.githubusercontent.com/georaaru/WHS-v2/main/po_02.gif",
           "text": "Use designated pedestrian walkways rather than cutting through operational areas."
         },
         {
