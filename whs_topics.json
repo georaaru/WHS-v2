@@ -22,6 +22,8 @@
         {
           "id": 4,
           "title": "Practise The Team Lift",
+           "spot_question": "Can you spot the hazard in this walkway?",
+          "image": "https://raw.githubusercontent.com/georaaru/WHS-v2/main/floor_hazards_02.gif",
           "text": "Test the weight before lifting and use both hands. Ask for help if an item is too heavy or awkward."
         },
         {
@@ -323,6 +325,8 @@
         {
           "id": 6,
           "title": "Avoid Cluttered Zones",
+          "spot_question": "Can you spot the hazard in this walkway?",
+          "image": "https://raw.githubusercontent.com/georaaru/WHS-v2/main/floor_hazards_01.gif",
           "text": "Do not walk through cluttered areas. Clear hazards or request assistance before proceeding."
         },
         {
