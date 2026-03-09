@@ -132,11 +132,15 @@
         {
           "id": 1,
           "title": "Use Handrails",
+          "spot_question": "Can you spot the hazard in this walkway?",
+          "image": "https://raw.githubusercontent.com/georaaru/WHS-v2/main/stair_safety_01.gif",
           "text": "Always use the handrail when ascending or descending stairs. Handrails provide stability and significantly reduce fall risk, especially when carrying light items."
         },
         {
           "id": 2,
           "title": "One Step At A Time",
+          "spot_question": "Can you spot the hazard in this walkway?",
+          "image": "https://raw.githubusercontent.com/georaaru/WHS-v2/main/stair_safety_02.gif",
           "text": "Avoid rushing or skipping steps. Maintain a steady pace and ensure your full foot is placed securely on each step."
         },
         {
