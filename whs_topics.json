@@ -218,6 +218,8 @@
         {
           "id": 1,
           "title": "Push Carts Safely",
+          "spot_question": " ",
+          "image": "https://raw.githubusercontent.com/georaaru/WHS-v2/main/ocs_01.gif",
           "text": "Push carts using designated handles and ensure your path is clear. Maintain full visibility ahead before moving. Apply both brakes when carts are stationary"
         },
         {
